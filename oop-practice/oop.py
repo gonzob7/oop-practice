@@ -20,13 +20,30 @@ class Student(Person):
             print(f"   -{course}")
 
 class Teacher(Person):
-    pass
+    def __init__(self, name):
+        super().__init__(name)
+        self.schedule = []
+
+    def teach_course(self, course):
+        self.schedule.append(course)
+
+    def get_schedule(self):
+        print(f"{self.name} teaches")
+        for course in self.schedule:
+            print(f"   -{course}")
+
+
 
 Jane = Student("Jane")
+Alan = Teacher("Alan")
+
 Jane.say_hello()
 Jane.get_courses()
+Alan.get_schedule()
 
 Jane.add_course("CS1.1")
 Jane.add_course("BEW1.1")
 Jane.add_course("SPD1.1")
 Jane.get_courses()
+Alan.teach_course("CS1.1!")
+Alan.get_schedule()
