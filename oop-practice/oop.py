@@ -10,6 +10,10 @@ class Student(Person):
         super().__init__(name)
         self.courses = []
 
+    def say_hello(self):
+        print("Hi everyone! My name is {} and I'm studying CS1.1!".format(self.name))
+
+
     def add_course(self, course):
         self.courses.append(course)
 
@@ -24,6 +28,10 @@ class Teacher(Person):
         super().__init__(name)
         self.schedule = []
 
+    def say_hello(self):
+        print("Hi everyone! My name is {} and I'm your teacher!".format(self.name))
+
+
     def teach_course(self, course):
         self.schedule.append(course)
 
@@ -33,17 +41,22 @@ class Teacher(Person):
             print(f"   -{course}")
 
 
-
+John = Person("John")
 Jane = Student("Jane")
-Alan = Teacher("Alan")
+Jamie = Teacher("Jamie")
+#
 
+John.say_hello()
 Jane.say_hello()
-Jane.get_courses()
-Alan.get_schedule()
+Jamie.say_hello()
 
-Jane.add_course("CS1.1")
-Jane.add_course("BEW1.1")
-Jane.add_course("SPD1.1")
-Jane.get_courses()
-Alan.teach_course("CS1.1!")
-Alan.get_schedule()
+# Jane.say_hello()
+# Jane.get_courses()
+# Alan.get_schedule()
+#
+# Jane.add_course("CS1.1")
+# Jane.add_course("BEW1.1")
+# Jane.add_course("SPD1.1")
+# Jane.get_courses()
+# Alan.teach_course("CS1.1!")
+# Alan.get_schedule()
